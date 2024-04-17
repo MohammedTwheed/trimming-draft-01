@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving
+and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
+
+<front>
+<journal-meta>
+<journal-id></journal-id>
+
+<journal-title-group>
+<journal-title>bachelor project with prof. dr. mohamed farid
+khalil</journal-title>
+</journal-title-group>
+<issn></issn>
+
+<publisher>
+<publisher-name></publisher-name>
+</publisher>
+</journal-meta>
+
+
+<article-meta>
+
+
+<title-group>
+<article-title>pump impeller trimming draft-01</article-title>
+</title-group>
+
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0000-0002-0760-5497</contrib-id>
+<name>
+<surname>Tawheed</surname>
+<given-names>Mohamed</given-names>
+</name>
+<string-name>Mohamed Tawheed</string-name>
+
+<email>moh@example</email>
+<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role vocab="https://credit.niso.org" vocab-term="project
+administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
+administration</role>
+<role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
+<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
+<xref ref-type="aff" rid="aff-1">a</xref>
+<xref ref-type="corresp" rid="cor-1">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0002-7859-8394</contrib-id>
+<name>
+<surname>Ibrahim</surname>
+<given-names>Seif</given-names>
+</name>
+<string-name>Seif Ibrahim</string-name>
+
+<xref ref-type="aff" rid="aff-2">b</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1">
+<institution-wrap>
+<institution>Curvenote</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<aff id="aff-2">
+<institution-wrap>
+<institution>alexandria university school of mechanicaL
+engineering</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1">moh@example</corresp>
+</author-notes>
+
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-04-17">
+<year>2024</year>
+<month>4</month>
+<day>17</day>
+</pub-date>
+
+
+
+
+
+
+
+<history></history>
+
+
+<abstract>
+<p>This paper presents a genetic algorithm (GA) methodology to optimize
+neural network hyperparameters in the context of pump impeller trimming.
+Impeller trimming, a process involving modifications to pump impeller
+geometry, traditionally requires expert knowledge and empirical methods
+to achieve the desired performance. The use of neural networks (NNs)
+provides an automated approach to improve the impeller trimming process
+based on input data and performance outcomes. The proposed method uses a
+GA to identify the optimal NN hyperparameters, such as hidden layer
+size, training function, activation function, and maximum epochs, aiming
+to minimize the mean squared error (MSE) between the network’s
+predictions and the actual target outcomes. This paper discusses the
+implementation details of the optimization process and explains the key
+components and their significance.</p>
+</abstract>
+<kwd-group kwd-group-type="author">
+<kwd>Pump impeller trimming</kwd>
+<kwd>Neural networks</kwd>
+<kwd>Hyperparameter optimization</kwd>
+<kwd>Genetic algorithms</kwd>
+<kwd>Mean squared error</kwd>
+</kwd-group>
+
+
+
+
+</article-meta>
+
+</front>
+
+<body>
+<sec id="introduction">
+  <title>1. introduction</title>
+  <p>Pump impeller trimming is a critical procedure in optimizing pump
+  performance for specific applications. It involves modifying the
+  impeller’s geometry to achieve desired hydraulic characteristics such
+  as head, flow rate, and efficiency. Traditionally, the process has
+  been dependent on empirical methods and engineering expertise.
+  However, the introduction of artificial neural networks (NNs) offers a
+  data-driven approach to automate and enhance impeller trimming.</p>
+  <p>NNs excel at modeling complex relationships between input data and
+  desired outputs. In the case of pump impeller trimming, the input data
+  (x) can include geometric parameters of the impeller, while the target
+  data (t) can consist of pump performance metrics. By training an NN on
+  a dataset of impeller designs and performance outcomes, the network
+  can learn to predict new impeller performance based on their
+  geometries.</p>
+  <p>Achieving optimal NN performance requires selecting appropriate
+  hyperparameters, which influence network architecture and the learning
+  process. Key NN hyperparameters include the size of the hidden layer,
+  the training function for weight updates, the activation function
+  introducing non-linearity, and the maximum number of training
+  epochs.</p>
+</sec>
+<sec id="methodology">
+  <title>2. Methodology</title>
+  <p>This paper outlines a genetic algorithm (GA) methodology for
+  optimizing neural network hyperparameters in pump impeller trimming.
+  GAs are suitable for searching for optimal solutions in complex,
+  high-dimensional spaces. The GA approach used in this study involves a
+  population of candidate hyperparameter sets. Each set is evaluated by
+  training an NN with those hyperparameters and measuring the resulting
+  MSE on a validation dataset. The GA iteratively selects promising
+  hyperparameter sets based on MSE values, performs crossover and
+  mutation to create new candidates, and continues until a stopping
+  criterion (such as maximum generations or elapsed time) is met.</p>
+  <sec id="define-options">
+    <title>2.1 Define Options</title>
+    <p>Define the set of available training functions (e.g.,
+    Levenberg-Marquardt, Bayesian Regularization) and activation
+    functions (e.g., tansigmoid, logarithmic sigmoid).</p>
+  </sec>
+  <sec id="nested-evaluation-function">
+    <title>2.2 Nested Evaluation Function</title>
+    <p>Implement a nested function
+    <monospace>evaluateHyperparameters(hyperParams, x, t, randomSeed)</monospace>
+    to evaluate a candidate hyperparameter set
+    (<monospace>hyperParams</monospace>), input data
+    (<monospace>x</monospace>), and target data
+    (<monospace>t</monospace>). This function: - Extracts individual
+    hyperparameters (hidden layer size, maximum epochs, training and
+    activation function indices). - Defines an NN architecture with the
+    given hyperparameters. - Splits data into training, validation, and
+    testing sets. - Trains the NN using the training data and specified
+    training function. - Evaluates the NN on validation data and
+    calculates MSE. - Returns the calculated MSE.</p>
+  </sec>
+  <sec id="random-seed-and-bounds">
+    <title>2.3 Random Seed and Bounds</title>
+    <p>set a random seed for reproducibility and define bounds for each
+    hyperparameter based on practical considerations and prior
+    knowledge.</p>
+    <sec id="importance-of-random-seed">
+      <title>2.3.1 Importance of Random Seed:</title>
+      <list list-type="bullet">
+        <list-item>
+          <p><bold>Reproducibility:</bold> Setting a random seed ensures
+          that the neural network training process is reproducible. This
+          allows for consistent results across different runs and helps
+          in comparing models fairly.</p>
+        </list-item>
+        <list-item>
+          <p><bold>Comparison:</bold> When testing different
+          hyperparameters or models, using the same random seed allows
+          for a direct comparison of their performance.</p>
+        </list-item>
+      </list>
+    </sec>
+  </sec>
+  <sec id="ga-options">
+    <title>2.4 GA Options</title>
+    <p>Configure GA options using
+    <monospace>optimoptions('ga')</monospace>, specifying parameters
+    such as maximum allowed time.</p>
+  </sec>
+  <sec id="perform-optimization">
+    <title>2.5 Perform Optimization</title>
+    <p>Execute the GA using <monospace>ga</monospace> from MATLAB’s
+    Optimization Toolbox. This function uses the
+    <monospace>evaluateHyperparameters</monospace> function as the
+    objective function to minimize, along with the number of
+    hyperparameters, bounds, and GA options.</p>
+  </sec>
+  <sec id="extract-and-round">
+    <title>2.6 Extract and Round</title>
+    <p>Obtain the final optimized hyperparameter set and round them (if
+    necessary) for practical NN implementation.</p>
+  </sec>
+  <sec id="report-results">
+    <title>2.7 Report Results</title>
+    <p>Report the optimized hyperparameters, final MSE, random seed
+    used, and total elapsed time of the optimization process.</p>
+  </sec>
+</sec>
+<sec id="conclusion">
+  <title>3. Conclusion</title>
+  <p>This paper presents a GA-based approach for optimizing neural
+  network hyperparameters in the context of pump impeller trimming. The
+  methodology enables a data-driven, automated optimization process,
+  providing potential improvements in efficiency and performance in pump
+  design and operation. Future work may explore refining the genetic
+  algorithm for better convergence or testing the approach with more
+  complex NN architectures.</p>
+</sec>
+<sec id="code-documentation">
+  <title>4. code documentation</title>
+  <p><bold>Optimizing Neural Network Hyperparameters for Pump Impeller
+  Trimming</bold></p>
+  <p>This code implements a function called
+  <monospace>optimizeNNForTrimmingPumpImpeller</monospace> that uses a
+  Genetic Algorithm (GA) to optimize the hyperparameters of a neural
+  network for pump impeller trimming.</p>
+  <p><bold>1. Starting Timer and User Notification:</bold></p>
+  <code language="matlab">    % Start timer to measure the duration of the optimization process.
+    tic;
+    disp(&quot;Optimization in progress. This process may take up to 30 seconds...&quot;);</code>
+  <list list-type="bullet">
+    <list-item>
+      <p>The <monospace>tic</monospace> function starts a timer to
+      measure how long the optimization process takes.</p>
+    </list-item>
+    <list-item>
+      <p>The <monospace>disp</monospace> function displays a message to
+      the user indicating that the optimization is underway and might
+      take up to 30 seconds.</p>
+    </list-item>
+  </list>
+  <p><bold>2. Defining Training and Activation Function
+  Options:</bold></p>
+  <code language="matlab">% Define the available options for training functions and activation functions.
+    trainingFunctionOptions = {'trainlm', 'trainbr', ...
+    'trainrp', 'traincgb', 'traincgf',...
+     'traincgp', 'traingdx', 'trainoss'};
+    activationFunctionOptions = {'tansig', 'logsig'};</code>
+  <list list-type="bullet">
+    <list-item>
+      <p>This section defines two cell arrays.</p>
+      <list list-type="bullet">
+        <list-item>
+          <p><monospace>trainingFunctionOptions</monospace>: This array
+          stores names of various training functions available in
+          MATLAB’s <monospace>fitnet</monospace> object. Training
+          functions determine how the neural network updates its weights
+          during training, impacting its learning behavior.</p>
+        </list-item>
+        <list-item>
+          <p><monospace>activationFunctionOptions</monospace>: This
+          array stores names of activation functions that can be applied
+          in the neural network’s hidden layer. Activation functions
+          introduce non-linearity, allowing the network to model complex
+          relationships between inputs and outputs.</p>
+        </list-item>
+      </list>
+    </list-item>
+  </list>
+  <p><bold>3. Defining Bounds and Options for Genetic Algorithm
+  (GA):</bold></p>
+  <code language="matlab">    % Define bounds for the genetic algorithm optimization.
+    lowerBounds = [5, 50, 1, 1];
+    upperBounds = [200, 200, 8, 2];
+
+    % Define options for the genetic algorithm.
+    gaOptions = optimoptions('ga', 'MaxTime', 20);</code>
+  <list list-type="bullet">
+    <list-item>
+      <p><bold>Bounds for GA Search (<monospace>lowerBounds</monospace>
+      and <monospace>upperBounds</monospace>)</bold></p>
+      <list list-type="bullet">
+        <list-item>
+          <p>These vectors define the minimum and maximum allowable
+          values for each hyperparameter during the GA optimization. For
+          instance, <monospace>lowerBounds = [5, 50, 1, 1]</monospace>
+          specifies a minimum hidden layer size of 5 neurons, a minimum
+          of 50 training epochs, and minimum indices of 1 for the
+          training function and activation function (since these indices
+          correspond to entries within the options arrays we defined
+          earlier). The upper bounds define the maximum allowed values
+          for each hyperparameter.</p>
+        </list-item>
+      </list>
+    </list-item>
+    <list-item>
+      <p><bold>GA Options (<monospace>gaOptions</monospace>)</bold></p>
+      <list list-type="bullet">
+        <list-item>
+          <p>This line uses <monospace>optimoptions('ga')</monospace> to
+          create a structure containing options for the GA. The GA is a
+          search algorithm inspired by biological evolution. It
+          iteratively tweaks candidate solutions (in our case, sets of
+          hyperparameters) and selects promising ones based on their
+          performance (MSE in this case) to create new generations. You
+          can modify these options to control aspects like population
+          size (number of candidate hyperparameter sets considered
+          simultaneously) and termination criteria (when to stop the
+          search). Here, <monospace>'MaxTime', 20</monospace> sets a
+          maximum allowed time of 20 seconds for the optimization
+          process per iteration (not total time). The algorithm stops
+          after running for MaxTime seconds, as measured by tic and toc.
+          This limit is enforced after each iteration, so ga can exceed
+          the limit when an iteration takes substantial time.</p>
+        </list-item>
+      </list>
+    </list-item>
+  </list>
+  <p><bold>4. Global Variable to Store Best Network:</bold></p>
+  <code language="matlab">    % Global variable to store the best trained neural network found during optimization.
+    global bestTrainedNet;
+    bestTrainedNet = [];</code>
+  <list list-type="bullet">
+    <list-item>
+      <p>A global variable named <monospace>bestTrainedNet</monospace>
+      is declared. This variable will be used to store the neural
+      network model that achieves the lowest MSE during the optimization
+      process.</p>
+    </list-item>
+  </list>
+  <p><bold>5. Nested Function: evaluateHyperparameters</bold></p>
+  <code language="matlab">% Nested function to evaluate hyperparameters using the neural network.
+    function mse = evaluateHyperparameters(hyperParams, x, t, randomSeed)
+        rng(randomSeed); % Set random seed for reproducibility.
+
+        % Extract hyperparameters.
+        hiddenLayerSize = round(hyperParams(1)); %Hidden Layer Size
+        maxEpochs = round(hyperParams(2));       %Max Epochs
+        trainingFunctionIdx = round(hyperParams(3)); %Training Function
+        activationFunctionIdx = round(hyperParams(4));%Activation 
+        %Function or transfere function
+
+        % Define the neural network.
+        net = fitnet(hiddenLayerSize, trainingFunctionOptions{trainingFunctionIdx});
+        net.trainParam.showWindow = false; % Suppress training GUI for efficiency.
+        net.trainParam.epochs = maxEpochs;
+        net.layers{1}.transferFcn = activationFunctionOptions{activationFunctionIdx};
+
+        % Define data split for training, validation, and testing.
+        net.divideParam.trainRatio = 0.7;
+        net.divideParam.valRatio = 0.15;
+        net.divideParam.testRatio = 0.15;
+
+        % Train the neural network.
+        [trainedNet, ~] = train(net, x, t);
+
+        % Evaluate the model performance using mean squared error (MSE).
+        predictions = trainedNet(x);
+        mse = perform(trainedNet, t, predictions);
+
+        % Check if the current MSE is the best MSE so far 
+        %and update the global variable if necessary.
+        if isempty(bestTrainedNet) || mse &lt; perform(bestTrainedNet,...
+         t, bestTrainedNet(x))
+            bestTrainedNet = trainedNet;
+        end
+    end
+  </code>
+  <p>The function <monospace>evaluateHyperparameters</monospace>
+  evaluates a set of hyperparameters for a neural network model. It uses
+  the hyperparameters to define, train, and evaluate a neural network,
+  returning the model’s mean squared error (MSE) as a measure of
+  performance.</p>
+  <sec id="function-overview">
+    <title>4.0.1 Function Overview:</title>
+    <list list-type="order">
+      <list-item>
+        <p><bold>Inputs:</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p><monospace>hyperParams</monospace>: A vector of
+            hyperparameters including:</p>
+            <list list-type="bullet">
+              <list-item>
+                <p><monospace>hiddenLayerSize</monospace>: The size of
+                the hidden layer in the neural network.</p>
+              </list-item>
+              <list-item>
+                <p><monospace>maxEpochs</monospace>: The maximum number
+                of epochs (training iterations).</p>
+              </list-item>
+              <list-item>
+                <p><monospace>trainingFunctionIdx</monospace>: The index
+                of the training function to use.</p>
+              </list-item>
+              <list-item>
+                <p><monospace>activationFunctionIdx</monospace>: The
+                index of the activation function to use.</p>
+              </list-item>
+            </list>
+          </list-item>
+          <list-item>
+            <p><monospace>x</monospace>: The input data (features) for
+            the neural network.</p>
+          </list-item>
+          <list-item>
+            <p><monospace>t</monospace>: The target data (labels) for
+            the neural network.</p>
+          </list-item>
+          <list-item>
+            <p><monospace>randomSeed</monospace>: The random seed for
+            reproducibility.</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Set Random Seed:</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>The function starts by setting the random seed using
+            <monospace>rng(randomSeed)</monospace> for reproducibility.
+            This ensures that the neural network training process is
+            consistent and repeatable.</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Extract and Apply Hyperparameters:</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>The function extracts hyperparameters from the input
+            vector <monospace>hyperParams</monospace>.</p>
+          </list-item>
+          <list-item>
+            <p>It uses these hyperparameters to define the neural
+            network architecture, training function, and activation
+            function.</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Data Splitting:</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>The function defines how to split the data into training,
+            validation, and testing sets (70% for training, 15% for
+            validation, and 15% for testing).</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Train the Neural Network:</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>The function trains the neural network using the
+            specified hyperparameters and input data.</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Evaluate Performance:</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>The function evaluates the trained network’s performance
+            using mean squared error (MSE), a measure of prediction
+            accuracy.</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Track the Best Trained Network:</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>The function compares the current MSE to the best MSE
+            seen so far. If the current MSE is better, the trained
+            network is stored as the best-trained network.</p>
+          </list-item>
+        </list>
+      </list-item>
+    </list>
+  </sec>
+  <sec id="importance-of-random-seed-1">
+    <title>4.0.2 Importance of Random Seed:</title>
+    <list list-type="bullet">
+      <list-item>
+        <p><bold>Reproducibility:</bold> Setting a random seed ensures
+        that the neural network training process is reproducible. This
+        allows for consistent results across different runs and helps in
+        comparing models fairly.</p>
+      </list-item>
+      <list-item>
+        <p><bold>Comparison:</bold> When testing different
+        hyperparameters or models, using the same random seed allows for
+        a direct comparison of their performance.</p>
+      </list-item>
+    </list>
+  </sec>
+  <sec id="concepts-underlying-epochs">
+    <title>4.0.3 Concepts Underlying Epochs:</title>
+    <list list-type="bullet">
+      <list-item>
+        <p><bold>Epochs:</bold> An epoch is a complete pass through the
+        entire training dataset. During each epoch, the neural network
+        updates its weights based on the training data.</p>
+      </list-item>
+      <list-item>
+        <p><bold>Why Search for Optimal Epochs:</bold> The number of
+        epochs affects how much the network learns from the data:</p>
+        <list list-type="bullet">
+          <list-item>
+            <p><bold>Too Few Epochs:</bold> The network may not learn
+            enough and can underfit, performing poorly on new data.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Too Many Epochs:</bold> The network may learn too
+            much and can overfit, performing well on the training data
+            but poorly on new data.</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Optimum Number of Epochs:</bold> An optimal number of
+        epochs strikes a balance between underfitting and overfitting,
+        ensuring the network generalizes well to new data.</p>
+      </list-item>
+    </list>
+  </sec>
+</sec>
+<sec id="test-citation">
+  <title>5. test citation</title>
+  <p>as dr farid said Khalil, Elgohary, and Shaito
+  (<xref alt="2013" rid="ref-khalil-ApplicationArtificialNeural-2013" ref-type="bibr">2013</xref>)
+  this is no enough</p>
+  <sec id="references">
+    <title>References</title>
+    <ref-list>
+      <ref id="ref-khalil-ApplicationArtificialNeural-2013">
+        <element-citation publication-type="paper-conference">
+          <person-group person-group-type="author">
+            <name><surname>Khalil</surname><given-names>Mohamed</given-names></name>
+            <name><surname>Elgohary</surname><given-names>Mohamed</given-names></name>
+            <name><surname>Shaito</surname><given-names>Ali</given-names></name>
+          </person-group>
+          <article-title>Application of artificial neural network for the prediction of trimmed impeller size of a centrifugal pump.</article-title>
+          <year iso-8601-date="2013-12">2013</year><month>12</month>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </sec>
+</sec>
+</body>
+
+<back>
+</back>
+
+<sub-article article-type="notebook" id="nb-4-nb-1">
+<front-stub>
+</front-stub>
+
+<body>
+
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+
+</article>
