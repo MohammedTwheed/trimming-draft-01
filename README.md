@@ -13,6 +13,13 @@ the process in more depth  you can download it as **pdf** or **word**:
 
 [**click here to get our paper first draft**](https://mohammedtwheed.github.io/trimming-draft-01/)
 
+**to run this locally on your pc**:
+ download only *optimizeNNForTrimmingPumpImpeller.m* and *trimming_nn_training_dataset.mat*
+ in the same folder .
+
+ 1. [click here to download : *optimizeNNForTrimmingPumpImpeller.m* ](https://github.com/MohammedTwheed/trimming-draft-01/blob/main/optimizeNNForTrimmingPumpImpeller.m)
+ 2. [click here to download : *trimming_nn_training_dataset.mat* ](https://github.com/MohammedTwheed/trimming-draft-01/blob/main/trimming_nn_training_dataset.mat)
+
 Welcome to the Impeller Trimming Optimization repository! This project showcases our efforts to utilize a genetic algorithm (GA) in MATLAB to optimize neural network hyperparameters for the purpose of impeller trimming. This approach aims to enhance the performance of pump impellers through data-driven optimization techniques.
 
 ## Project Overview
