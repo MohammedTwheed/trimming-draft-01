@@ -1,4 +1,4 @@
-Here is a better README for the repository that hosts the project on impeller trimming:
+
 
 ---
 
