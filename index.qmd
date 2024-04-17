@@ -17,7 +17,7 @@ author:
     corresponding: false
     roles: []
     affiliations:
-      - Curvenote
+      - alexandria university school of mechanicaL engineering
 keywords:
   - Pump impeller trimming
   - Neural networks
@@ -129,8 +129,10 @@ This code implements a function called `optimizeNNForTrimmingPumpImpeller` that 
 **2. Defining Training and Activation Function Options:**
 
 ```matlab
-    % Define the available options for training functions and activation functions.
-    trainingFunctionOptions = {'trainlm', 'trainbr', 'trainrp', 'traincgb', 'traincgf', 'traincgp', 'traingdx', 'trainoss'};
+% Define the available options for training functions and activation functions.
+    trainingFunctionOptions = {'trainlm', 'trainbr', ...
+    'trainrp', 'traincgb', 'traincgf',...
+     'traincgp', 'traingdx', 'trainoss'};
     activationFunctionOptions = {'tansig', 'logsig'};
 ```
 
@@ -177,7 +179,8 @@ This code implements a function called `optimizeNNForTrimmingPumpImpeller` that 
         hiddenLayerSize = round(hyperParams(1)); %Hidden Layer Size
         maxEpochs = round(hyperParams(2));       %Max Epochs
         trainingFunctionIdx = round(hyperParams(3)); %Training Function
-        activationFunctionIdx = round(hyperParams(4));%Activation Function or transfere function
+        activationFunctionIdx = round(hyperParams(4));%Activation 
+        %Function or transfere function
 
         % Define the neural network.
         net = fitnet(hiddenLayerSize, trainingFunctionOptions{trainingFunctionIdx});
@@ -197,8 +200,10 @@ This code implements a function called `optimizeNNForTrimmingPumpImpeller` that 
         predictions = trainedNet(x);
         mse = perform(trainedNet, t, predictions);
 
-        % Check if the current MSE is the best MSE so far and update the global variable if necessary.
-        if isempty(bestTrainedNet) || mse < perform(bestTrainedNet, t, bestTrainedNet(x))
+        % Check if the current MSE is the best MSE so far 
+        %and update the global variable if necessary.
+        if isempty(bestTrainedNet) || mse < perform(bestTrainedNet,...
+         t, bestTrainedNet(x))
             bestTrainedNet = trainedNet;
         end
     end
