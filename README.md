@@ -4,6 +4,15 @@
 
 # Impeller Trimming Optimization
 
+
+## Paper website
+
+here you can find our very first draft where we try to explain
+the process in more depth  you can download it as **pdf** or **word**:
+
+
+[**click here to get our paper first draft**](https://mohammedtwheed.github.io/trimming-draft-01/)
+
 Welcome to the Impeller Trimming Optimization repository! This project showcases our efforts to utilize a genetic algorithm (GA) in MATLAB to optimize neural network hyperparameters for the purpose of impeller trimming. This approach aims to enhance the performance of pump impellers through data-driven optimization techniques.
 
 ## Project Overview
